@@ -1,0 +1,8 @@
+#{{- if and .Release.Namespace (.Values.createReleaseNamespace | default false) -}}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cert-manager
+  annotations:
+    certmanager.k8s.io/disable-validationn: true
+#{{- end -}}
